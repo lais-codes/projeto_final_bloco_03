@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
 import Home from './components/home/Home'
-import Categorias from './pages/Categorias'
+import ListaCategorias from './components/categoria/ListaCategorias'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <div className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/categorias" element={<Categorias />} />
+          <Route path="/categorias" element={<ListaCategorias />} />
         </Routes>
       </div>
       <Footer />
