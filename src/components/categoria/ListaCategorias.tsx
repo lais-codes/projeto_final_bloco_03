@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import CardCategoria from "./CardCategoria";
+import { Link } from "react-router-dom";
 
 interface Categoria {
   id: number;
@@ -26,20 +28,15 @@ function Listacategorias() {
         Lista de Categorias
       </h1>
 
+      <Link to="/cadastrarcategoria">
+        <button className="bg-green-500 text-white px-4 py-2 rounded-lg mb-6">
+          Nova Categoria
+        </button>
+      </Link>
+
       <div className="flex flex-wrap gap-6">
         {categorias.map((cat) => (
-          <div
-            key={cat.id}
-            className="w-60 border border-gray-300 rounded-xl p-5 shadow-md"
-          >
-            <h2 className="text-xl font-semibold mb-4">
-              {cat.descricao}
-            </h2>
-
-            <button className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-lg">
-              Deletar
-            </button>
-          </div>
+          <CardCategoria key={cat.id} categoria={cat} />
         ))}
       </div>
     </div>
@@ -47,3 +44,5 @@ function Listacategorias() {
 }
 
 export default Listacategorias;
+
+

@@ -3,6 +3,7 @@ import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
 import Home from './components/home/Home'
 import ListaCategorias from './components/categoria/ListaCategorias'
+import FormCategoria from './components/categoria/FormCategoria'
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/categorias" element={<ListaCategorias />} />
+          <Route path="/cadastrarcategoria" element={<FormCategoria />} />
+          <Route path="/editarcategoria/:id" element={<FormCategoria />} />
         </Routes>
       </div>
       <Footer />

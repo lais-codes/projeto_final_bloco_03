@@ -6,21 +6,21 @@ const api = axios.create({
 
 export default api;
 
-export const buscarCategorias = async () => {
+export const buscar = async () => {
   const response = await api.get("/categorias");
   return response.data;
 };
 
-export const cadastrarCategoria = async (categoria: any) => {
+export const cadastrar = async (categoria: any) => {
   const response = await api.post("/categorias", categoria);
   return response.data;
 };
 
-export const atualizarCategoria = async (categoria: any) => {
-  const response = await api.put(`/categorias/${categoria.id}`, categoria);
+export const atualizar = async (categoria: any) => {
+  const response = await api.put("/categorias", categoria);
   return response.data;
 };
 
-export const deletarCategoria = async (id: number) => {
+export const deletar = async (id: number) => {
   await api.delete(`/categorias/${id}`);
 };
